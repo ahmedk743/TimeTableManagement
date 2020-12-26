@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="timetablescheduler.FXMLDocumentController">
+    <children>
+        <TabPane prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.topAnchor="0.0">
+        <tabs>
+          <Tab text="Faculty">
+            <content>
+              <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="371.0" prefWidth="600.0">
+                     <children>
+                        <Text layoutX="43.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Manage Faculty Data" wrappingWidth="232.79150390625">
+                           <font>
+                              <Font size="27.0" />
+                           </font>
+                        </Text>
+                        <Label layoutX="43.0" layoutY="115.0" text="ID:">
+                           <font>
+                              <Font name="System Bold Italic" size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="faculty_id" layoutX="127.0" layoutY="115.0" />
+                        <Label layoutX="43.0" layoutY="173.0" text="Name:">
+                           <font>
+                              <Font name="System Bold Italic" size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="faculty_name" layoutX="127.0" layoutY="173.0" />
+                        <Button fx:id="faculty" layoutX="238.0" layoutY="230.0" mnemonicParsing="false" onAction="#add_faculty" text="Add" />
+                        <Button fx:id="del_faculty" layoutX="176.0" layoutY="230.0" mnemonicParsing="false" onAction="#faculty_del" text="Delete" />
+                        <TableView fx:id="fac_tableView" layoutX="296.0" prefHeight="380.0" prefWidth="305.0">
+                          <columns>
+                            <TableColumn fx:id="col_fac_id" prefWidth="150.0" text="ID" />
+                            <TableColumn fx:id="col_fac_name" prefWidth="153.0" text="FacultyName" />
+                          </columns>
+                        </TableView>
+                        <Label layoutX="176.0" layoutY="268.0" prefHeight="92.0" prefWidth="59.0" text="*In order to Delete a Record it takes only an ID of that Record, so you can just enter ID" wrapText="true">
+                           <font>
+                              <Font size="9.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Department">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Text layoutX="43.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Manage Department Data" wrappingWidth="231.3681640625">
+                           <font>
+                              <Font size="27.0" />
+                           </font>
+                        </Text>
+                        <Label layoutX="43.0" layoutY="115.0" text="ID:">
+                           <font>
+                              <Font name="System Bold Italic" size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="dep_id" layoutX="127.0" layoutY="115.0" />
+                        <Label layoutX="43.0" layoutY="173.0" text="Name:">
+                           <font>
+                              <Font name="System Bold Italic" size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="dep_name" layoutX="127.0" layoutY="173.0" />
+                        <Label layoutX="43.0" layoutY="232.0" text="Faculty:">
+                           <font>
+                              <Font name="System Bold Italic" size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="dep_faculty" layoutX="127.0" layoutY="232.0" />
+                        <Button fx:id="dep" layoutX="238.0" layoutY="279.0" mnemonicParsing="false" onAction="#add_dep" text="Add" />
+                        <Button fx:id="del_dep" layoutX="176.0" layoutY="279.0" mnemonicParsing="false" onAction="#dep_del" text="Delete" />
+                        <TableView fx:id="dep_tableView" layoutX="287.0" layoutY="-4.0" prefHeight="380.0" prefWidth="318.0">
+                           <columns>
+                              <TableColumn fx:id="col_dep_id" prefWidth="65.0" text="ID" />
+                              <TableColumn fx:id="col_dep_name" prefWidth="139.0" text="DepartmentName" />
+                              <TableColumn fx:id="col_dep_fac" prefWidth="107.0" text="Faculty" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+               </content>
+          </Tab>
+            <Tab text="Lecturer">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Text layoutX="43.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Manage Lecturer Data" wrappingWidth="233.98828125">
+                           <font>
+                              <Font size="27.0" />
+                           </font>
+                        </Text>
+                        <Label layoutX="32.0" layoutY="115.0" text="ID:">
+                           <font>
+                              <Font name="System Bold Italic" size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="lecturer_id" layoutX="127.0" layoutY="115.0" />
+                        <Label layoutX="27.0" layoutY="192.0" text="Name:">
+                           <font>
+                              <Font name="System Bold Italic" size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="lecturer_name" layoutX="127.0" layoutY="192.0" />
+                        <Label layoutX="25.0" layoutY="233.0" text="Department:">
+                           <font>
+                              <Font name="System Bold Italic" size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="lecturer_dep" layoutX="127.0" layoutY="233.0" />
+                        <Label layoutX="25.0" layoutY="270.0" prefHeight="26.0" prefWidth="59.0" text="Faculty:">
+                           <font>
+                              <Font name="System Bold Italic" size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="lecturer_faculty" layoutX="127.0" layoutY="270.0" />
+                        <Label layoutX="24.0" layoutY="152.0" text="Title:">
+                           <font>
+                              <Font name="System Bold Italic" size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="lecturer_title" layoutX="127.0" layoutY="152.0" />
+                        <Button fx:id="lecturer" layoutX="240.0" layoutY="311.0" mnemonicParsing="false" onAction="#add_lecturer" text="Add" />
+                        <Button fx:id="del_lect" layoutX="176.0" layoutY="311.0" mnemonicParsing="false" onAction="#lect_del" text="Delete" />
+                        <TableView fx:id="lec_tableView" layoutX="282.0" layoutY="-4.0" prefHeight="380.0" prefWidth="318.0">
+                           <columns>
+                              <TableColumn fx:id="col_lec_id" prefWidth="65.0" text="ID" />
+                              <TableColumn fx:id="col_lec_name" prefWidth="65.0" text="Name" />
+                              <TableColumn fx:id="col_lec_title" minWidth="3.0" prefWidth="60.0" text="Title" />
+                              <TableColumn fx:id="col_lec_dep" prefWidth="54.0" text="Dep" />
+                              <TableColumn fx:id="col_lec_fac" prefWidth="98.0" text="Faculty" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Course">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Text layoutX="43.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Manage Course Data" wrappingWidth="232.1455078125">
+                           <font>
+                              <Font size="27.0" />
+                           </font>
+                        </Text>
+                        <Label layoutX="32.0" layoutY="115.0" text="ID:">
+                           <font>
+                              <Font name="System Bold Italic" size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="course_id" layoutX="127.0" layoutY="115.0" />
+                        <Label layoutX="30.0" layoutY="192.0" text="Credits:">
+                           <font>
+                              <Font name="System Bold Italic" size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="course_code" layoutX="127.0" layoutY="165.0" />
+                        <Label layoutX="25.0" layoutY="221.0" text="Section:">
+                           <font>
+                              <Font name="System Bold Italic" size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="course_credits" layoutX="127.0" layoutY="192.0" />
+                        <Label layoutX="25.0" layoutY="246.0" prefHeight="26.0" prefWidth="67.0" text="Lecturer:">
+                           <font>
+                              <Font name="System Bold Italic" size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="course_section" layoutX="127.0" layoutY="221.0" />
+                        <Label layoutX="33.0" layoutY="165.0" text="Code:">
+                           <font>
+                              <Font name="System Bold Italic" size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="course_name" layoutX="127.0" layoutY="140.0" />
+                        <Label layoutX="30.0" layoutY="140.0" text="Name:">
+                           <font>
+                              <Font name="System Bold Italic" size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="course_dep" layoutX="127.0" layoutY="271.0" />
+                        <Label layoutX="11.0" layoutY="271.0" text="Department:">
+                           <font>
+                              <Font name="System Bold Italic" size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="course_lecturer" layoutX="127.0" layoutY="246.0" />
+                        <Label layoutX="25.0" layoutY="297.0" prefHeight="26.0" prefWidth="59.0" text="Faculty:">
+                           <font>
+                              <Font name="System Bold Italic" size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="course_faculty" layoutX="127.0" layoutY="297.0" />
+                        <Button fx:id="course" layoutX="238.0" layoutY="332.0" mnemonicParsing="false" onAction="#add_course" text="Add" />
+                        <Button fx:id="del_course" layoutX="176.0" layoutY="332.0" mnemonicParsing="false" onAction="#course_del" text="Delete" />
+                        <TableView fx:id="crs_tableView" layoutX="282.0" layoutY="-4.0" prefHeight="380.0" prefWidth="318.0">
+                           <columns>
+                              <TableColumn fx:id="col_crs_id" prefWidth="30.0" text="ID" />
+                              <TableColumn fx:id="col_crs_name" prefWidth="45.0" text="Name" />
+                              <TableColumn fx:id="col_crs_code" minWidth="3.0" prefWidth="39.0" text="Code" />
+                              <TableColumn fx:id="col_crs_cred" prefWidth="33.0" text="Cred" />
+                              <TableColumn fx:id="col_crs_lec" prefWidth="34.0" text="Sect" />
+                              <TableColumn fx:id="col_crs_sect" prefWidth="36.0" text="Lect" />
+                              <TableColumn fx:id="col_crs_dep" prefWidth="46.0" text="Dep" />
+                              <TableColumn fx:id="col_crs_fac" prefWidth="53.0" text="Fac" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Class">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Text layoutX="43.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Manage Course Data" wrappingWidth="233.1455078125">
+                           <font>
+                              <Font size="27.0" />
+                           </font>
+                        </Text>
+                        <Label layoutX="32.0" layoutY="115.0" text="ID:">
+                           <font>
+                              <Font name="System Bold Italic" size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="class_id" layoutX="127.0" layoutY="115.0" />
+                        <Label layoutX="27.0" layoutY="192.0" text="Lab:">
+                           <font>
+                              <Font name="System Bold Italic" size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="class_lab" layoutX="127.0" layoutY="192.0" />
+                        <Label layoutX="25.0" layoutY="233.0" text="Batch:">
+                           <font>
+                              <Font name="System Bold Italic" size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="class_batch" layoutX="127.0" layoutY="233.0" />
+                        <Label layoutX="24.0" layoutY="152.0" text="Course:">
+                           <font>
+                              <Font name="System Bold Italic" size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="class_course" layoutX="127.0" layoutY="152.0" />
+                        <Button fx:id="addclass" layoutX="238.0" layoutY="282.0" mnemonicParsing="false" onAction="#add_class" text="Add" />
+                        <Button fx:id="del_class" layoutX="176.0" layoutY="282.0" mnemonicParsing="false" onAction="#class_del" text="Delete" />
+                        <TableView fx:id="cls_tableView" layoutX="282.0" layoutY="-4.0" prefHeight="380.0" prefWidth="318.0">
+                           <columns>
+                              <TableColumn fx:id="col_cls_id" prefWidth="65.0" text="ID" />
+                              <TableColumn fx:id="col_cls_crs" prefWidth="81.0" text="Course" />
+                              <TableColumn fx:id="col_cls_lab" minWidth="3.0" prefWidth="75.0" text="Semester" />
+                              <TableColumn fx:id="col_cls_batch" prefWidth="95.0" text="Batch" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Classroom">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Text layoutX="43.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Manage Classroom Data" wrappingWidth="228.55517578125">
+                           <font>
+                              <Font size="27.0" />
+                           </font>
+                        </Text>
+                        <Label layoutX="32.0" layoutY="115.0" text="ID:">
+                           <font>
+                              <Font name="System Bold Italic" size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="classroom_id" layoutX="127.0" layoutY="115.0" />
+                        <Label layoutX="27.0" layoutY="192.0" text="Room#">
+                           <font>
+                              <Font name="System Bold Italic" size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="classroom_room" layoutX="127.0" layoutY="192.0" />
+                        <Label layoutX="25.0" layoutY="233.0" text="R&amp;D Lab:">
+                           <font>
+                              <Font name="System Bold Italic" size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="classroom_rnd" layoutX="127.0" layoutY="233.0" />
+                        <Label layoutX="27.0" layoutY="152.0" text="Lab:">
+                           <font>
+                              <Font name="System Bold Italic" size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="classroom_lab" layoutX="127.0" layoutY="152.0" />
+                        <Button fx:id="classroom" layoutX="238.0" layoutY="274.0" mnemonicParsing="false" onAction="#add_classroom" text="Add" />
+                        <Button fx:id="del_classroom" layoutX="176.0" layoutY="274.0" mnemonicParsing="false" onAction="#classroom_del" text="Delete" />
+                        <TableView fx:id="clsrm_tableView" layoutX="282.0" layoutY="-4.0" prefHeight="380.0" prefWidth="318.0">
+                           <columns>
+                              <TableColumn fx:id="col_clsrm_id" prefWidth="65.0" text="ID" />
+                              <TableColumn fx:id="col_clsrm_rm" prefWidth="90.0" text="Lab" />
+                              <TableColumn fx:id="col_clsrm_lab" minWidth="3.0" prefWidth="69.0" text="Room" />
+                              <TableColumn fx:id="col_clsrm_rnd" prefWidth="92.0" text="RnD" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Schedule Class">
+               <content>
+                  <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="371.0" prefWidth="600.0">
+                     <children>
+                        <Text layoutX="43.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Schedule A Class">
+                           <font>
+                              <Font size="27.0" />
+                           </font>
+                        </Text>
+                        <Label layoutX="43.0" layoutY="103.0" text="Faculty:">
+                           <font>
+                              <Font name="System Bold Italic" size="16.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="faculty1" layoutX="313.0" layoutY="320.0" mnemonicParsing="false" onAction="#scheduleIt" text="ScheduleIt" />
+                        <ComboBox fx:id="facultyCombo" layoutX="143.0" layoutY="103.0" prefWidth="150.0" />
+                        <Label layoutX="43.0" layoutY="174.0" text="Lecturer:">
+                           <font>
+                              <Font name="System Bold Italic" size="16.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="lecturerCombo" layoutX="143.0" layoutY="174.0" prefWidth="150.0" />
+                        <Label layoutX="43.0" layoutY="139.0" text="Department:">
+                           <font>
+                              <Font name="System Bold Italic" size="16.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="depCombo" layoutX="143.0" layoutY="139.0" prefWidth="150.0" />
+                        <Label layoutX="43.0" layoutY="69.0" text="Day:">
+                           <font>
+                              <Font name="System Bold Italic" size="16.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="dayCombo" layoutX="143.0" layoutY="69.0" prefWidth="150.0" />
+                        <Label layoutX="43.0" layoutY="208.0" text="Course:">
+                           <font>
+                              <Font name="System Bold Italic" size="16.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="courseCombo" layoutX="143.0" layoutY="208.0" prefWidth="150.0" />
+                        <Label layoutX="43.0" layoutY="243.0" text="RoomORLab">
+                           <font>
+                              <Font name="System Bold Italic" size="16.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="roomCombo" layoutX="143.0" layoutY="243.0" prefWidth="150.0" />
+                        <Label layoutX="43.0" layoutY="280.0" text="TimeSlot:">
+                           <font>
+                              <Font name="System Bold Italic" size="16.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="timeCombo" layoutX="143.0" layoutY="280.0" prefWidth="150.0" />
+                        <Label layoutX="43.0" layoutY="320.0" text="Batch:">
+                           <font>
+                              <Font name="System Bold Italic" size="16.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="batchCombo" layoutX="143.0" layoutY="320.0" prefWidth="150.0" />
+                     </children>
+                  </AnchorPane>
+               </content></Tab>
+            <Tab text="Show TimeTable">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tableView" layoutX="98.0" layoutY="1.0" prefHeight="369.0" prefWidth="502.0">
+                          <columns>
+                            <TableColumn fx:id="col_slot1" prefWidth="139.0" text="8:30AM-10:30AM" />
+                              <TableColumn fx:id="col_slot2" prefWidth="156.0" text="10:30AM-12:30PM" />
+                              <TableColumn fx:id="col_slot3" prefWidth="149.0" text="13:30PM-3:30PM" />
+                          </columns>
+                        </TableView>
+                        <Label layoutX="18.0" layoutY="27.0" text="Monday">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="18.0" layoutY="114.0" text="Friday">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="15.0" layoutY="94.0" text="Thursday">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="12.0" layoutY="67.0" text="Wednesday">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="18.0" layoutY="47.0" text="Tuesday">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Button layoutX="8.0" layoutY="247.0" mnemonicParsing="false" onAction="#deleteTable" prefHeight="69.0" prefWidth="85.0" text="DeleteTable" />
+<!--                            <fx:define>
+                               <Image fx:id="btnImage" url="delete_icon.png" />
+                            </fx:define>
+                            <graphic>
+                                <ImageView image="$btnImage" />
+                            </graphic>
+                        </Button>-->
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+    </children>
+</AnchorPane>
